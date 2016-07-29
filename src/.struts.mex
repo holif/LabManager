@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="struts" location="225,108" size="280,280">
+    <action name="Login" location="66,48" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="Logout" location="66,153" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="login.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="login.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="index.jsp" path="/view/index.jsp" location="290,10" size="150,55" />
+  <webResource name="login.jsp" path="/login.jsp" location="10,150" size="150,55" />
+  <webResource name="login.jsp" path="login.jsp" location="10,325" size="150,55" />
+  <include file="device.xml" location="608,142" size="150,30" />
+</Struts2Diagram>
+

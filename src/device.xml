@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" /> 
+	<package name="device" extends="struts-default">
+		<action name="BuyAppeal" class="xyz.baal.action.BuyAppealAction">
+			<result name="success">/view/buy.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="BuyReview" class="xyz.baal.action.BuyReviewAction">
+			<result name="success">/view/index.jsp</result>
+			<result name="reject">/view/index.jsp</result>
+		</action>
+		<action name="SelectDevice" class="xyz.baal.action.SelectDeviceAction">
+			<result name="success">/view/deviceshow.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<action name="SelectDeviceByKey" class="xyz.baal.action.SelectDeviceAction" method="byKey">
+			<result name="success">/view/deviceshow.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<action name="SelectRepair" class="xyz.baal.action.SelectRepairAction">
+			<result name="success">/view/repairshow.jsp</result>
+			<result name="review">/view/repairreview.jsp</result>
+		</action>
+		<action name="SelectScrap" class="xyz.baal.action.SelectScrapAction">
+			<result name="success">/view/scrapshow.jsp</result>
+			<result name="review">/view/scrapreview.jsp</result>
+		</action>
+		<action name="SelectBuy"
+			class="xyz.baal.action.SelectBuyAction">
+			<result name="success">/view/buyrecord.jsp</result>
+			<result name="review">/view/buyreview.jsp</result>
+		</action>
+		<action name="RepairAppeal"
+			class="xyz.baal.action.RepairAppealAction">
+			<result name="success">/view/index.jsp</result>
+			<result name="error">/view/repairapply.jsp</result>
+		</action>
+		<action name="ScrapAppeal"
+			class="xyz.baal.action.ScrapAppealAction">
+			<result name="success">/view/index.jsp</result>
+			<result name="error">/view/scrapapply.jsp</result>
+		</action>
+		<action name="RepairReview"
+			class="xyz.baal.action.RepairReviewAction">
+			<result name="error">/view/index.jsp</result>
+			<result name="success" type="redirectAction">
+				SelectRepair
+			</result>
+		</action>
+
+		<action name="ScrapReview"
+			class="xyz.baal.action.ScrapReviewAction">
+			<result name="success" type="redirectAction">
+				SelectScrap
+			</result>
+			<result name="reject" type="redirectAction">
+				SelectScrap
+			</result>
+		</action>
+	</package>
+	
+</struts>    

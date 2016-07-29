@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.baal.mybatis.scrapinfoMapper">
+	<select id="getAllScrapinfo" resultType="xyz.baal.bean.Scrap">
+		select * from scrap
+	</select>
+	<select id="getScrapinfoById" parameterType="int" resultType="xyz.baal.bean.Scrap">
+		select * from scrap
+		where id=#{id}
+	</select>
+	<select id="getDevicesByAppealState" parameterType="String" resultType="xyz.baal.bean.Scrap">
+		select * from scrap
+		where permission=#{permission}
+	</select>		
+	<update id="updateScrapinfoById" parameterType="xyz.baal.bean.Scrap">
+		update
+		scrap set permission=#{permission},checkDate=#{checkDate} where id=#{id}
+	</update>
+	<insert id="insertScrapinfo" parameterType="xyz.baal.bean.Scrap">
+		insert into scrap(deviceName,deviceNo,applyDate,permission,agent,checkDate,scrapInfo) 
+		values(#{deviceName},#{deviceNo},#{applyDate},#{permission},#{agent},#{checkDate},#{scrapInfo})
+	</insert>
+</mapper>

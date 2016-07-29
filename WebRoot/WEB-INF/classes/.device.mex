@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="device" location="50,107" size="700,245">
+    <action name="BuyAppeal" location="450,47" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="buy.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="BuyReview" location="450,152" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="login.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="SelectDevice" location="205,152" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="deviceshow.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="login.jsp" />
+      </result>
+    </action>
+    <action name="SelectRepair" location="323,46" size="150,40">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="repairshow.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="buy.jsp" path="/view/buy.jsp" location="815,149" size="150,55" />
+  <webResource name="login.jsp" path="/login.jsp" location="500,9" size="150,55" />
+  <webResource name="login.jsp" path="/view/login.jsp" location="500,394" size="150,55" />
+  <webResource name="login.jsp" path="login.jsp" location="10,464" size="150,55" />
+  <webResource name="deviceshow.jsp" path="/view/deviceshow.jsp" location="255,394" size="150,55" />
+  <webResource name="repairshow.jsp" path="/view/repairshow.jsp" location="0,0" size="150,55" />
+</Struts2Diagram>
+

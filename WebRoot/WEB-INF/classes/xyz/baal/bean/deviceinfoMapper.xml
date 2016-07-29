@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.baal.mybatis.deviceinfoMapper">
+	<select id="getAllDeviceinfo" resultType="xyz.baal.bean.Device">
+		select * from device
+	</select>
+	<select id="getDeviceinfoByKey" parameterType="String" resultType="xyz.baal.bean.Device">
+		select * from device where 1=1
+		<if test="_parameter != null">
+			and type like "%"#{key}"%" or deviceName like "%"#{key}"%"
+		</if>
+	</select>
+	<select id="getDeviceinfoByDeviceNo" parameterType="String" resultType="xyz.baal.bean.Device">
+		select * from
+		device where deviceNo=#{deviceNo}
+	</select>
+	<update id="updateBuyinfoByDeviceNo" parameterType="xyz.baal.bean.Device">
+		update buy
+		set maintenanceRecord=#{maintenanceRecord},scrap=#{scrap}
+		where deviceNo=#{deviceNo}
+	</update>	
+	<insert id="insertDeviceinfo" parameterType="xyz.baal.bean.Device">
+		insert into device(type,deviceName,deviceNo,deviceClassNo,deviceSize,devicePrice,buyDate,manufacturer,warranty,operator,maintenanceRecord,scrap) 
+		values(#{type},#{deviceName},#{deviceNo},#{deviceClassNo},#{deviceSize},#{devicePrice},#{buyDate},#{manufacturer},#{warranty},#{operator},#{maintenanceRecord},#{scrap})
+	</insert>
+</mapper>

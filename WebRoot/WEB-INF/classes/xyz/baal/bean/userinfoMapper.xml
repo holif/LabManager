@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.baal.mybatis.userinfoMapper">
+	<select id="getAllUserinfo" resultType="xyz.baal.bean.User">
+		select * from user
+	</select>
+	<select id="getUserinfoByUsername" parameterType="String" resultType="xyz.baal.bean.User">
+		select * from
+		user where username=#{username}
+	</select>
+</mapper>

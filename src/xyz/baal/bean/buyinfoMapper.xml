@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.baal.mybatis.buyinfoMapper">
+	<select id="getAllBuyinfo" resultType="xyz.baal.bean.Buy">
+		select * from buy
+	</select>
+	<select id="getBuyinfoByType" parameterType="String" resultType="xyz.baal.bean.Buy">
+		select * from
+		buy where deviceType=#{deviceType}
+	</select>	
+	<select id="getBuyinfoById" parameterType="int" resultType="xyz.baal.bean.Buy">
+		select * from
+		buy where id=#{id}
+	</select>
+	<select id="getBuyinfoByState" parameterType="String" resultType="xyz.baal.bean.Buy">
+		select * from buy 
+		where permission=#{permission}
+	</select>
+	<update id="updateBuyinfoById" parameterType="xyz.baal.bean.Buy">
+		update buy
+		set permission=#{permission},checkDate=#{checkDate}
+		where id=#{id}
+	</update>
+	<insert id="insertBuyinfo" parameterType="xyz.baal.bean.Buy">
+		insert into buy(deviceName,deviceType,deviceClassNo,deviceSize,devicePrice,applyDate,agent,permission,checkDate) 
+		values(#{deviceName},#{deviceType},#{deviceClassNo},#{deviceSize},#{devicePrice},#{applyDate},#{agent},#{permission},#{checkDate})
+	</insert>
+</mapper>
