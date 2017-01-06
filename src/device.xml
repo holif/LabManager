@@ -25,12 +25,24 @@
 			<result name="success">/view/repairshow.jsp</result>
 			<result name="review">/view/repairreview.jsp</result>
 		</action>
+		<action name="repairReview" class="xyz.baal.action.SelectRepairAction" method="repairReview" >
+			<result name="success">/view/repairshow.jsp</result>
+			<result name="review">/view/repairreview.jsp</result>
+		</action>		
 		<action name="SelectScrap" class="xyz.baal.action.SelectScrapAction">
 			<result name="success">/view/scrapshow.jsp</result>
 			<result name="review">/view/scrapreview.jsp</result>
 		</action>
+		<action name="scrapReview" class="xyz.baal.action.SelectScrapAction" method="scrapReview" >
+			<result name="success">/view/scrapshow.jsp</result>
+			<result name="review">/view/scrapreview.jsp</result>
+		</action>			
 		<action name="SelectBuy"
 			class="xyz.baal.action.SelectBuyAction">
+			<result name="success">/view/buyrecord.jsp</result>
+			<result name="review">/view/buyreview.jsp</result>
+		</action>
+		<action name="buyReview" class="xyz.baal.action.SelectBuyAction" method="buyReview" >
 			<result name="success">/view/buyrecord.jsp</result>
 			<result name="review">/view/buyreview.jsp</result>
 		</action>

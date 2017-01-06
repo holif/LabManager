@@ -13,6 +13,9 @@ public class UserService {
 	public static User userLogin(User user){
 		UserDao userDao = new UserDao();
 		User usertemp= userDao.getUserByusername(user.getUsername());
+		if(usertemp==null){
+			return null;
+		}
 		if(user.getPassword().equals(usertemp.getPassword())){
 			return usertemp;
 		} else {

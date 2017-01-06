@@ -17,4 +17,9 @@
   <filter-mapping>
   	<filter-name>struts2</filter-name>
   	<url-pattern>*.action</url-pattern>
-  </filter-mapping></web-app>
+  </filter-mapping>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.html</location>
+  </error-page>
+  </web-app>

@@ -2,6 +2,12 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<include file="device.xml"></include>
+	<package name="default" extends="struts-default">
+		<default-action-ref name="notFound" />
+		<action name="notFound">
+			<result>/404.html</result>
+		</action>
+	</package>
 	<package name="struts"  extends="struts-default">
 		<action name="Login" class="xyz.baal.action.LoginAction">
 			<result name="success">/view/index.jsp</result>
